@@ -1,0 +1,66 @@
+			Git Comments:
+------------------------------------------------------------------------------------
+
+1). Create Empty Folder & get Path & Open cmd. 
+
+2). D:\test>git clone https://github.com/suresh160390/myproject.git
+
+3). Open VS Code > code .  & git init  & git add Myapp/*
+
+4).  If you not configer use this - git config --global user.name "github username: suresh160390"
+
+5). If you not configer use this email - git config --global user.name "suresha003@gmail.com"
+
+6). Check the hidden floder or files in '.git - floder'
+
+7).Go to git folder in VS Code & type the comment git add .\floder or file
+
+8) -m is message - git commit -m "fiststage: Myapp"
+
+9).Finally git push
+
+10) get respositry folder - git pull 
+
+11). check the file status - git status
+
+12).All Folder Files - git add .
+
+13). Check your current branch - git branch
+
+14).New branch create - git checkout -b "frontend"
+
+15). Return to mainbranch - git checkout main [next check your current branch] - git branch
+
+16). Branch Name change - git branch -M "friendbackend"
+
+17) First git pull & Get All Branch - git branch -a
+
+18). Push to frontend - git push origin frontend
+
+19) See all changes - git log & exit Key press Q
+
+------------------------------------------------------------------------------------------------
+
+git init
+
+git remote add origin https://github.com/suresh160390/myproject.git
+
+git remote add origin https://github.com/suresh160390/Saiprojects.git
+
+check  - git remote -v
+
+git push -u origin main
+
+Create Backend and Frontend Branches: git checkout -b backend  git checkout -b frontend
+
+Add and Commit Changes: git add .   git commit -m "Add backend files"
+
+Switch to the frontend branch: git checkout frontend  git add .  git commit -m "Add frontend files"
+
+Push Branches to Remote Repository:  git push origin backend git push origin frontend
+
+Branch Delete:  git push origin --delete frontend
+
+Remove folder backend branch: git rm -r Myapp  git rm -r --cached app
+
+Remove .git - Remove-Item -Path "app\.git" -Recurse -Force
