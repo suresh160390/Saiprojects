@@ -1,0 +1,23 @@
+python -m pip install virtualenv 
+Enev Create - C:\Users\Suresh.p.a\Desktop\Python\myproject>python3 -m virtualenv my-env
+Enev Script Activate -  C:\Users\Suresh.p.a\Desktop\Python\myproject>my-env\Scripts\activate
+
+pip list
+
+pip freeze > requirements.txt
+
+pip install -r requirements.txt
+
+
+HDFC Credit-Card UserName : suresha003
+HDFC Credit-Card Password : suresh@123
+HDFC Credit-Card ATM PIN : 1603
+
+------------------------------------------------------------------------------------------------
+			Exe File Create
+			.................
+
+(my-env) C:\Users\Suresh.p.a\Desktop\Disbursement>pip install pyinstaller
+(my-env) C:\Users\Suresh.p.a\Desktop\Disbursement>pyinstaller --onefile Disbursement.py
+
+
