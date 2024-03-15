@@ -1,0 +1,26 @@
+
+npm -f install @material-ui/core
+
+npm -f install @material-ui/icons
+
+updated nmp - C:\Users\sanandrao>npm install -g npm@latest
+
+list - C:\Users\sanandrao>npm config list
+
+create env - C:\Users\sanandrao>npx create-react-app my-app
+
+Directly open VS Code - D:\React\my-app>code .
+
+Start React Run VS Code - PS D:\React\my-app> npm start run
+
+PS D:\React\my-app> npm update
+
+freeze file - npm list --depth=0 > dependencies.txt
+
+install file - type D:\React\my-app\dependencies.txt | xargs npm install
+
+install file - npm install $(cat dependencies.txt)
+
+install file - xargs npm install < dependencies.txt
+
+npm install $(Get-Content "D:\Suresh\sidebar\Myapp\app\dependencies.txt")
