@@ -1,0 +1,195 @@
+python -m pip install virtualenv 
+Enev Create - C:\Users\Suresh.p.a\Desktop\Python\myproject>python3 -m virtualenv my-env
+Enev Script Activate -  C:\Users\Suresh.p.a\Desktop\Python\myproject>my-env\Scripts\activate
+
+netsh wlan show profile name="SAI-WIFI-02_5G" key="clear"
+
+pip list
+
+pip freeze > requirements.txt
+
+pip install -r requirements.txt
+
+     EB
+User Name : 011450621240
+Password  : suresh1603
+
+	Credit-Card
+.....................................
+HDFC Credit-Card UserName : suresha003
+HDFC Credit-Card Password : suresh@123
+HDFC Credit-Card ATM PIN : 1603
+
+	Debit-Card
+.....................................
+Acc No : 50100393315120
+HDFC Debit-Card UserName : 158319503
+HDFC Debit-Card Password : suresh1603k
+
+HDFC Net Banking Debit-Card Password : suresh@12345
+
+------------------------------------------------------------------------------------------------
+			Exe File Create
+			.................
+
+(my-env) C:\Users\Suresh.p.a\Desktop\Disbursement>pip install pyinstaller
+(my-env) C:\Users\Suresh.p.a\Desktop\Disbursement>pyinstaller --onefile Disbursement.py
+
+(my-env) C:\Users\Suresh.p.a\Desktop\Disbursement>pyinstaller -D -F Disbursement.py
+
+(my-env) C:\Users\Suresh.p.a\Desktop\Disbursement>pyinstaller --onefile --hidden-import "babel.numbers" Minimarket.py
+
+pyinstaller --onefile --add-data "E:\Projects\Hold\Final 25-04-2023\static\*.png;static" BarCode_Scanner.py
+
+pyinstaller --onefile --add-data "E:/Projects/Project 62/static/*.png;static" Sample.py
+
+pyinstaller --onefile --hidden-import "babel.numbers" --add-data "E:\Projects\Project 62\static\*.png;static" Sample.py
+
+pyinstaller --onefile --hidden-import=pyzbar --add-data "E:\Projects\Hold\Final\static\*.png;static" BarCode_Scanner.py
+
+pyinstaller --onefile --add-binary "E:\Projects\Hold\Final\my-env\Lib\site-packages\pyzbar\libiconv.dll;." --add-data "E:\Projects\Hold\Final\static\*.png;static" BarCode_Scanner.py
+
+important -> FileNotFoundError: Could not find module 'libzbar-64.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+
+pyinstaller --onefile --add-binary "E:\Projects\Hold\Final\my-env\Lib\site-packages\pyzbar\libzbar-64.dll;." --add-binary "E:\Projects\Hold\Final\my-env\Lib\site-packages\pyzbar\libiconv.dll;." --add-data "E:\Projects\Hold\Final\static\*.png;static" BarCode_Scanner.py
+
+----------------------------------------------------------------------------------------------------
+	Add Image Python exe
+
+import os
+import sys
+import tkinter as tk
+
+def path_sam():
+    root=Tk()
+
+    if getattr(sys, 'frozen', False):
+        # Running in a PyInstaller bundle
+        image_path = os.path.join(sys._MEIPASS, 'Static', 'Close.png')
+        image_path1 = os.path.join(sys._MEIPASS, 'Static', 'Mapping1.png')
+    else:
+        # Running in a normal Python environment
+        image_path = os.path.join(os.getcwd(), 'Static', 'Close.png')
+        image_path1 = os.path.join(os.getcwd(), 'Static', 'Mapping1.png')
+
+    root.title("Input Excel Path")
+    root.resizable(False,False)
+
+    w = 700
+    h = 200
+    ws = root.winfo_screenwidth()
+    hs = root.winfo_screenheight()
+    x = (ws/2) - (w/2)
+    y = (hs/2) - (h/2)
+    root.geometry('%dx%d+%d+%d' % (w, h, x, y))
+    root.config(bg="#2c3e50",highlightbackground="blue",highlightthickness=1)
+
+     photo1 = PhotoImage(file=image_path1)
+     btn1=Button(Frame3,command=Click_Done,text="Run",image=photo1,borderwidth=0)
+     btn1.grid(row=2,column=0,padx=180,pady=12,sticky="W")	
+	
+     photo = PhotoImage(file=image_path)
+     btn2=Button(Frame3,command=Close,text="Close",image=photo,borderwidth=0)
+     btn2.grid(row=2,column=1,padx=60,pady=12,sticky="E")	
+     
+     root.mainloop()
+     
+if __name__=="__main__":
+  path_sam()
+
+------------------------------------------------------------------------------------------------
+				Power Query
+			----------------------------
+
+list = {"a",100,false} - List
+listoflist = {{1,2,3},{"a","b","c"},{true,false,true},{"a",100,false}}
+ListofRecord = {[CustID=1,Name="Suresh",phone="7299602505"],
+		[CustID=2,Name="Loga",phone="7299602505"]}
+mylistIndex = {"a",100,false} {0} -> return Zero index of "a"
+mylistIndexNested = {
+		      {1,2,3},
+		      {"a","b","c"},
+                      {true,false,true},
+	              {"a",100,false}
+		    }{0}{1} -> return Zero index List and first index of 2
+
+let
+myTable = #table(
+	          {"OrderID","CustomerID","Item","Price"}, -> My Columns Names
+		  {{1,1,"Fishing rod",100.00}, -> My Row 1
+		  {2,1,"1 lb. worms",5.00}}    -> My Row 2
+		),
+
+myTablewithType = #table(
+	          	  type table[OrderID=number,CustomerID=number,Item=text,Price=number], -> My Columns Names with Defined DataTypes
+		  {{1,1,"Fishing rod",100.00}, -> My Row 1
+		  {2,1,"1 lb. worms",5.00}}    -> My Row 2
+		),
+myTableRowOne = myTable{0} -> two Table zero index Row get
+
+in
+myTableRowOne  
+
+------  = Record.HasFields(Myrecord,"Name") -> Result = True & check filed header exist or not
+
+------  = Record.HasFields(Myrecord,"Name","Suresh") -> Result = Frue & check filed value exist or not
+
+
+			Concadenate Function
+
+"A" & "BC"     -    "ABC"
+{1} & {2,3}    -    {1,2,3}
+[a=1] & [b=2]  -    [a=1,b=2]
+
+
+
+--------------------------------------------------------------------------------------------------
+			Files Load
+		---------------------------
+
+CSV
+
+myCSVFileContent = File.Contents("C\User\....csv"),
+myCSVFileDocument=Csv.Document(myCSVFileContent,[Delimiter=",",Columns=11,Encoding=TextEncoding.Utf8,QuoteStyle=QuoteStyle.None])
+
+Excel
+
+myExcelFileContent = File.Contents("C\User\....xlsx"),
+myExcelFileDocument=Excel.Workbook(myExcelFileContent,true,true)
+
+Web
+
+myWebContent = Web.Contents("https://en.wikipedia.org/wiki/Star_Wars",[Timeout=#duration(0,1,40,0)]),
+myWebPageContent =Web.Page(myWebContent)
+
+Access Database
+
+myAccessDatabaseContent = File.Contents("C\User\....accdb"),
+myAccessDatabase=Access.Database(myAccessDatabaseContent,[CreateNavigationProperties=true]),
+myAccessTable=myAccessDatabase{[Item="ACTUALS_CAPITAL"]}[Data] -> Table Name "ACTUALS_CAPITAL"
+
+SQL
+
+mySQLDatabase=Sql.Database("DESKTOP-M0A806M\SQLEXPRESS","stock_database",[HierarchicalNavigation=true,Query="SELECT * FROM [dbo].[td_service_data]"])
+
+Folder
+
+myFolderContents=Folder.Contents("C\User\....")
+
+Json
+
+myJsonDocument=Json.Document(File.Contents("C\User\....json"))
+
+PDF
+
+myPDFTables = Pdf.Tables(File.Contents("C\User\....pdf"))
+
+ 
+
+
+
+
+
+
+
+		
